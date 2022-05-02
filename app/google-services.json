@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "219570137930",
+    "firebase_url": "https://riddle-52c13-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "riddle-52c13",
+    "storage_bucket": "riddle-52c13.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:219570137930:android:e135ab4e8591b18405efb3",
+        "android_client_info": {
+          "package_name": "com.app.riddle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "219570137930-o9oi7s27suoob9gsaf9p4ie9m6trg3q3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3qolfN8gTcqUbTUj2Q0yvLhRNLctgnoM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "219570137930-o9oi7s27suoob9gsaf9p4ie9m6trg3q3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
