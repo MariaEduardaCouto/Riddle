@@ -26,9 +26,10 @@ public class SessionDataSource {
         return FirebaseAuth.getInstance().getCurrentUser() != null;
     }
 
-    public void signIn(String email, String password, final Callback callback) {
-        FirebaseAuth.getInstance().signOut();
-        FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    public void register(String email, String password, final Callback callback) {
+        FirebaseAuth mauth = FirebaseAuth.getInstance();
+                mauth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
