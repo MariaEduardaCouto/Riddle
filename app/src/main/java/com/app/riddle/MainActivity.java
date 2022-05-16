@@ -33,6 +33,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btn_have_account= (TextView) findViewById(R.id.btn_have_account);
+        btn_have_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                intent.setAction(Intent.ACTION_VIEW);
+                MainActivity.this.startActivity(intent);
+
+            }
+        });
+
 
     }
 }
