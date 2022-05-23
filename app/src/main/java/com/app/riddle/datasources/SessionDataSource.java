@@ -26,6 +26,7 @@ public class SessionDataSource {
         return FirebaseAuth.getInstance().getCurrentUser() != null;
     }
 
+
     public void register(String email, String password, final Callback callback) {
 
         FirebaseAuth mauth = FirebaseAuth.getInstance();
