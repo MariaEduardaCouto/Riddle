@@ -1,9 +1,13 @@
 package com.app.riddle.scenes.feed;
 
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
+import com.app.riddle.R;
 import com.app.riddle.datasources.AnonimousPostDataSource;
 import com.app.riddle.helpers.Callback;
 import com.app.riddle.models.AnonimousPostModel;
@@ -14,10 +18,10 @@ import java.util.ArrayList;
 
 public class FeedActivityPresenter extends BaseAdapter implements IFeedActivityPresenter {
 
-    private final IFeedActivity view;
+    private final FeedActivity view;
     ArrayList<AnonimousPostModel> postList = new ArrayList<AnonimousPostModel>();
 
-    public FeedActivityPresenter(IFeedActivity view){
+    public FeedActivityPresenter(FeedActivity view){
         this.view = view;
     }
 
@@ -60,6 +64,20 @@ public class FeedActivityPresenter extends BaseAdapter implements IFeedActivityP
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+
+        if (view == null) {
+            LayoutInflater inflater = (LayoutInflater) FeedActivityPresenter.this.view.getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            //Dedicated layout for the item itself
+            view = inflater.inflate(R.layout.post_item_layout, viewGroup, false);
+        }
+
+        final AnonimousPostModel model = (AnonimousPostModel) getItem(i);
+
+        //Setting the texts
+        ((TextView) view.findViewById(R.id.titleItem)).setText(model.title);
+        ((TextView) view.findViewById(R.id.descItem)).setText(model.body);
+
+        return view;
+
     }
 }
