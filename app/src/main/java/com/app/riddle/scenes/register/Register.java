@@ -1,4 +1,4 @@
-package com.app.riddle;
+package com.app.riddle.scenes.register;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.app.riddle.R;
 import com.app.riddle.datasources.SessionDataSource;
 import com.app.riddle.helpers.Callback;
+import com.app.riddle.scenes.feed.FeedActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,6 +23,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Register extends AppCompatActivity {
+
 
     private EditText input_email;
     private EditText input_phone;
@@ -38,6 +41,8 @@ public class Register extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
@@ -81,7 +86,11 @@ public class Register extends AppCompatActivity {
             @Override
             public void onSuccess(Object responseObject) {
                 Toast.makeText(Register.this,
-                        "Success!.", Toast.LENGTH_LONG).show();
+                        "Welcome to Riddle!", Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(Register.this, FeedActivity.class);
+                        intent.setAction(Intent.ACTION_VIEW);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        Register.this.startActivity(intent);
 
             }
 
