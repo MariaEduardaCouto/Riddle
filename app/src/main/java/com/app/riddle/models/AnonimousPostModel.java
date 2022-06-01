@@ -1,6 +1,9 @@
 package com.app.riddle.models;
 
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+
+import java.util.UUID;
 
 public class AnonimousPostModel {
 
@@ -9,6 +12,14 @@ public class AnonimousPostModel {
     public String title;
     public String country;
     public Integer likeCounter;
+
+    public AnonimousPostModel(String body, String title) {
+        this.id = new UUID(12,12).toString();
+        this.body = body;
+        this.title = title;
+        this.country = "es";
+        this.likeCounter = 0;
+    }
 
     public AnonimousPostModel(DataSnapshot item_snapshot) {
         this.id = item_snapshot.getKey().toString();
@@ -30,4 +41,12 @@ public class AnonimousPostModel {
                 : 0;
 
     }
+
+    public void save(DatabaseReference databaseReference) {
+        databaseReference.child(this.id).child("body").setValue(body);
+        databaseReference.child(this.id).child("title").setValue(title);
+        databaseReference.child(this.id).child("country").setValue(country);
+        databaseReference.child(this.id).child("likeCounter").setValue(likeCounter);
+    }
+
 }

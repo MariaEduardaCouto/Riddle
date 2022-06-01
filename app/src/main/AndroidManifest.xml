@@ -10,23 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Riddle">
         <activity
+            android:name=".scenes.create.CreatePostActivity"
+            android:exported="false" />
+        <activity
             android:name=".scenes.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".scenes.login.LoginActivity"
-            android:exported="false" android:noHistory="true" />
+            android:exported="false"
+            android:noHistory="true" />
         <activity
             android:name=".scenes.feed.FeedActivity"
             android:exported="false" />
         <activity
             android:name=".scenes.register.Register"
-            android:exported="false" android:noHistory="true"
-            />
+            android:exported="false"
+            android:noHistory="true" />
         <activity
             android:name=".scenes.boot.BootActivity"
             android:exported="true"
             android:noHistory="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -16,11 +16,13 @@ public class AnonimousPostDataSource {
     public static AnonimousPostDataSource shared = new AnonimousPostDataSource();
 
     private ArrayList<AnonimousPostModel> postList = new ArrayList<AnonimousPostModel>();
+    final DatabaseReference databaseReference =
+            FirebaseDatabase.getInstance().getReference().child("AnonimousPost");
+
 
     public void fetch(final Callback callback){
 
-        final DatabaseReference databaseReference =
-                FirebaseDatabase.getInstance().getReference().child("AnonimousPost");
+
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
@@ -43,5 +45,10 @@ public class AnonimousPostDataSource {
 
 
         databaseReference.addValueEventListener(eventListener);
+    }
+
+
+    public  void create(AnonimousPostModel postModel){
+        postModel.save(databaseReference);
     }
 }
