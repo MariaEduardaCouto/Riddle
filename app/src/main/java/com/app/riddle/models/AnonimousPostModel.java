@@ -19,7 +19,7 @@ public class AnonimousPostModel {
     public AnonimousPostModel(String body, String title, String color) {
         this.id = UUID.randomUUID().toString();
         this.body = body;
-        this.title = title;
+        this.title = "You";
         this.country = "es";
         this.likeCounter = 0;
         this.color = color;
@@ -34,7 +34,7 @@ public class AnonimousPostModel {
 
         this.title = item_snapshot.child("title").exists()
                 ? item_snapshot.child("title").getValue().toString()
-                : id;
+                : "";
 
         this.country = item_snapshot.child("country").exists()
                 ? item_snapshot.child("country").getValue().toString()

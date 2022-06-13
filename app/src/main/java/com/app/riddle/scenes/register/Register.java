@@ -52,9 +52,9 @@ public class Register extends AppCompatActivity {
         input_password = (EditText) findViewById(R.id.input_password);
         btn_register = (Button) findViewById(R.id.btn_register);
 
-        input_email.setText("mariaeduardacoutt@gmail.com");
-        input_password.setText("mariaeduardaom");
-        input_phone.setText("556854545");
+        //input_email.setText("mariaeduardacoutt@gmail.com");
+        //input_password.setText("mariaeduardaom");
+        //input_phone.setText("556854545");
 
         btn_register.setOnClickListener(new View.OnClickListener() {
             @Override
