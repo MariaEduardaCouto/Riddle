@@ -1,7 +1,9 @@
 package com.app.riddle.scenes.create;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -51,17 +53,42 @@ public class CreatePostActivity extends AppCompatActivity  {
 
                 //check the user has filled somenthing
 
-
-                AnonimousPostModel post = new AnonimousPostModel(
-                        txt_body.getText().toString(),
-                        "title",
-                        txt_color.getText().toString());
+               if (!txt_body.getText().toString().equals("")){
 
 
-                AnonimousPostDataSource.shared.create(post);
+                   String[] colors = {"#9EF246", "#FCCB58", "#E66C5D", "#B658FC","#55B3F2"};
+                   String[] colorsNames = {"Green", "Orange", "Red", "Purple","Blue"};
 
 
-                CreatePostActivity.this.finish();
+                   AlertDialog.Builder builder = new AlertDialog.Builder(CreatePostActivity.this);
+                   builder.setTitle("Pick a color");
+                   builder.setItems(colorsNames, new DialogInterface.OnClickListener() {
+                       @Override
+                       public void onClick(DialogInterface dialog, int which) {
+                           // the user clicked on colors[which]
+
+                           String hex = colors[which];
+
+
+
+                           AnonimousPostModel post = new AnonimousPostModel(
+                                   txt_body.getText().toString(),
+                                   "title",
+                                   hex);
+
+
+                           AnonimousPostDataSource.shared.create(post);
+
+
+                           CreatePostActivity.this.finish();
+
+
+                       }
+                   });
+                   builder.show();
+               }
+
+
             }
         });
         close_post.setOnClickListener(new View.OnClickListener() {
