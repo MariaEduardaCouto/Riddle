@@ -10,23 +10,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Riddle">
         <activity
+            android:screenOrientation="portrait"
             android:name=".scenes.create.CreatePostActivity"
             android:exported="false" />
+
         <activity
+            android:screenOrientation="portrait"
             android:name=".scenes.main.MainActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".scenes.login.LoginActivity"
             android:exported="false"
             android:noHistory="true" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".scenes.feed.FeedActivity"
             android:exported="false" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".scenes.register.Register"
             android:exported="false"
             android:noHistory="true" />
         <activity
+            android:screenOrientation="portrait"
             android:name=".scenes.boot.BootActivity"
             android:exported="true"
             android:noHistory="true">
