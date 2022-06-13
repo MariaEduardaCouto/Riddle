@@ -4,6 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".scenes.create.CreatePostActivity">
+    tools:context=".scenes.create.CreatePostActivity"
+    android:background="@drawable/gradient_background">
+
+    <EditText
+        android:id="@+id/txt_body"
+        android:layout_width="211dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="179dp"
+        android:layout_marginTop="164dp"
+        android:layout_marginEnd="174dp"
+        android:background="#FFFFFF"
+        android:text="Share a thought..."
+        android:textAlignment="viewStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/close_post"
+        android:layout_width="30dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="352dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/close_post" />
+
+    <Button
+        android:id="@+id/publish_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="Publish"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_body" />
+
+    <EditText
+        android:id="@+id/txt_color"
+        android:layout_width="118dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="177dp"
+        android:background="#FFFFFF"
+        android:text="Choose a color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_body" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

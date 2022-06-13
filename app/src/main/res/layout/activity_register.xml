@@ -21,45 +21,54 @@
 
     <EditText
         android:id="@+id/input_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
         android:layout_marginStart="101dp"
         android:layout_marginTop="65dp"
         android:layout_marginEnd="101dp"
+        android:background="@drawable/edit_input"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="12dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
         android:hint="Email Address"
+        android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <EditText
         android:id="@+id/input_phone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
         android:layout_marginStart="100dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
         android:inputType="phone"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="12dp"
         android:hint="Phone (Recommended)"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edit_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/input_email" />
 
     <EditText
         android:id="@+id/input_password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
         android:layout_marginStart="101dp"
         android:layout_marginTop="34dp"
         android:layout_marginEnd="101dp"
+        android:background="@drawable/edit_input"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="12dp"
         android:ems="10"
+        android:hint="Password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_phone"
-        android:hint="Password"/>
+        app:layout_constraintTop_toBottomOf="@+id/input_phone" />
 
     <Button
         android:id="@+id/btn_register"

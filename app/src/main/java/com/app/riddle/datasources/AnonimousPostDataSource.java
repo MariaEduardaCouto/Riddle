@@ -28,9 +28,8 @@ public class AnonimousPostDataSource {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 ArrayList<AnonimousPostModel> postList = new ArrayList<AnonimousPostModel>();
-
                 for (DataSnapshot item_snapshot : dataSnapshot.getChildren()) {
-                    postList.add(new AnonimousPostModel(item_snapshot));
+                    postList.add(0, new AnonimousPostModel(item_snapshot));
                 }
 
                 AnonimousPostDataSource.this.postList = postList;

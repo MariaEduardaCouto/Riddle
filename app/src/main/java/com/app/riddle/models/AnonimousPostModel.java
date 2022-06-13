@@ -1,5 +1,7 @@
 package com.app.riddle.models;
 
+import android.graphics.Color;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 
@@ -12,13 +14,15 @@ public class AnonimousPostModel {
     public String title;
     public String country;
     public Integer likeCounter;
+    public String color;
 
-    public AnonimousPostModel(String body, String title) {
-        this.id = new UUID(12,12).toString();
+    public AnonimousPostModel(String body, String title, String color) {
+        this.id = UUID.randomUUID().toString();
         this.body = body;
         this.title = title;
         this.country = "es";
         this.likeCounter = 0;
+        this.color = color;
     }
 
     public AnonimousPostModel(DataSnapshot item_snapshot) {
@@ -40,6 +44,10 @@ public class AnonimousPostModel {
                 ? new Integer(item_snapshot.child("likeCounter").getValue().toString())
                 : 0;
 
+        this.color = item_snapshot.child("color").exists()
+                ? item_snapshot.child("color").getValue().toString()
+                : "#E5B77D";
+
     }
 
     public void save(DatabaseReference databaseReference) {
@@ -47,6 +55,7 @@ public class AnonimousPostModel {
         databaseReference.child(this.id).child("title").setValue(title);
         databaseReference.child(this.id).child("country").setValue(country);
         databaseReference.child(this.id).child("likeCounter").setValue(likeCounter);
+        databaseReference.child(this.id).child("color").setValue(color);
     }
 
 }

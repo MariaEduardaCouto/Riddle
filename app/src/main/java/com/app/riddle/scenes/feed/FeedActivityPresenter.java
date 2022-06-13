@@ -1,10 +1,12 @@
 package com.app.riddle.scenes.feed;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.app.riddle.R;
@@ -76,6 +78,7 @@ public class FeedActivityPresenter extends BaseAdapter implements IFeedActivityP
         //Setting the texts
         ((TextView) view.findViewById(R.id.titleItem)).setText(model.title);
         ((TextView) view.findViewById(R.id.descItem)).setText(model.body);
+        ((LinearLayout) view.findViewById(R.id.backgoundOfaPost)).setBackgroundColor(Color.parseColor(model.color));
 
         return view;
 
